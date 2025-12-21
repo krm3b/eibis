@@ -1,0 +1,21 @@
+// 共通
+@use 'partial/_mixin.scss';
+@use 'partial/_common.scss';
+@use 'partial/_reset.scss';
+@use 'partial/_variables.scss';
+
+@use 'partial/_header.scss';
+@use 'partial/_footer.scss';
+
+// メインページ
+@use 'partial/_mainvisual.scss';
+@use 'partial/_about-us.scss';
+@use 'partial/_our-services.scss';
+@use 'partial/_engineer.scss';
+@use 'partial/_part-time.scss';
+@use 'partial/_recruit.scss';
+@use 'partial/_contact.scss';
+
+// 下層ページ
+@use 'partial/_page-contact.scss';
+// メモ　確認後消します　→ 下層のファイル作成時は　page-◯◯.scss とすること

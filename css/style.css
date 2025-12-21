@@ -1,0 +1,55 @@
+body {
+  font-family: "Noto Serif JP", serif;
+  background-color: #FFFFFF;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 2%;
+}
+
+.sec-pd {
+  padding-block: 100px;
+}
+@media (max-width: 768px) {
+  .sec-pd {
+    padding-block: 70px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 160%;
+}
+
+html {
+  scroll-behavior: smooth;
+}/*# sourceMappingURL=style.css.map */
