@@ -13,6 +13,14 @@ body {
     padding: 0;
 }
 
+iframe {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    display: block;
+    background-color: #988787;
+}
+
 .container {
     max-width: 1000px;
     width: 100%;
