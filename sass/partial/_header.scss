@@ -2,5 +2,187 @@
 @use 'mixin' as *;
 
 header {
+  height: $header-height;
+  @include flex;
+  align-items: center;
+  padding-inline: 5%;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background: transparent; // ←背景透過にする
+
+  .left-header {
+    @include flex(flex-start, 10px);
+    width: 40%;
+    align-items: end;
+    height: 100%;
+
+    .logo {
+      display: block;
+        img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: normal;
+      span {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .right-header {
+    @include flex(flex-end, 20px);
+    align-items: center;
+    width: 60%;
+
+    .btn {
+      @include flex(space-between, 20px);
+      align-items: center;
+      border: 1px $color-accent solid;
+      border-radius: 50px;
+      background-color: $color-white;
+      padding: 0 0 0 20px;
+      transition: background-color 0.3s ease; // ふわっと切り替え
+      position: relative;
+      z-index: 100;
+
+      &:hover {
+        background-color: $color-accent;
+        color: $color-white;
+      }
+
+      .btn-icon-wrapper {
+        background-color: $color-accent;
+        padding: 10px;
+        border-radius: 50px;
+      }
+
+    }
+    .icon-wrapper {
+      background-color: $color-accent;
+      padding: 10px;
+      border-radius: 50px;
+      transition: background-color 0.3s ease; // ふわっと切り替え
+      z-index: 100;
+      position: relative;
+
+      &:hover {
+        background-color: $color-main;
+      }
+    }
+
+    .toggle-btn {
+      width: 50px;
+      height: 50px;
+      background-color: $color-main;
+      padding: 10px;
+      border-radius: 50px;
+      z-index: 100;
+      position: relative;
+      cursor: pointer;
+  
+      span {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 4px;
+          width: 50%;
+          border-radius: 10px;
+          background-color: $color-white;
+          transition: .5s ease;
+  
+          &:nth-child(1) {
+              top: 26%;
+          }
+          &:nth-child(2) {
+              top: 48%;
+          }
+          &:nth-child(3) {
+              top: 69%;
+          }
+      }
+    }
+
+    nav {
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 450px;
+      height: 70vh;
+      border-top-left-radius: 100px;
+      background-color: $color-white;
+      transform: translateX(100%); // 初期は右の外に隠す
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s ease;
+
+      .nav-list {
+          height: 100%;
+          display: flex;
+          gap: clamp(7px, 1.8vw, 25px);
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+          gap: 40px;
+          height: 70vh;
+          background-color: $color-white;
+          padding: 20% 10%;
+          border-top-left-radius: 100px;
+
+
+          .page-jump {
+              position: relative;
+              display: inline-block;
+              text-shadow: 0 2px 2px #fff;
+              font-size: clamp(2.3rem, 1.4vw, 2.6rem);
+
+              &::after {
+                  content: "";
+                  position: absolute;
+                  bottom: -3px;
+                  left: 0;
+                  height: 2px;
+                  width: 0;
+                  background-color: $color-accent;
+                  opacity: 0;
+                  transition: all .3s ease;
+              }
+              
+              &:hover::after {
+                  opacity: 1;
+                  width: 100%;
+              }
+          }
+      }
+    }
+  }
+
+  &.open {
+    .toggle-btn {
+        span {
+            &:nth-child(1) {
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(-315deg);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:nth-child(3) {
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(315deg);
+            }
+        }
+    }
+    nav {
+        transform: translateX(0); // ← スライドイン
+        opacity: 1;
+        visibility: visible;
+    }
+}
 
 }
