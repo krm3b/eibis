@@ -1,0 +1,99 @@
+@use 'variables' as *;
+@use 'mixin' as *;
+.page-news {
+
+    .inner {
+        margin-top: 10%;
+        display: flex;
+        gap: 40px;
+
+        @include tab {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .left {
+            width: 50%;
+            
+            @include tab {
+                width: 80%;
+            }
+
+            h2 {
+                background-color: $color-blue;
+                border-radius: 15px;
+                color: $color-white;
+                padding: 20.5px 25px;
+                font-size: 2.4rem;
+            }
+
+            p {
+                margin-top: 50px;
+                line-height: 40px;
+            }
+
+
+        }
+
+        .right {
+            width: 50%;
+            margin-top: 15%;
+
+            @include tab {
+                width: 80%;
+                margin-top: 0%;
+            }
+
+
+            img {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 3 / 2;
+                object-fit: cover;
+                display: block;
+            }
+        }
+    }
+
+    .back-link-container {
+        // display: flex;
+        // justify-content: end;
+        padding-left: 70px;
+        padding-top: 10px;
+
+        .link-back {
+            position: relative;
+            font-size: 2rem;
+            color: $color-text;
+            text-decoration: none;
+            padding-bottom: 5px;
+            display: inline-block;
+            font-family: serif;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: -50px;
+                width: 100px;
+                height: 1px;
+                background-color: $color-text;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: -50px;
+                width: 15px;
+                height: 1px;
+                background-color: $color-text;
+                transform-origin: left center;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,117 @@
+@use 'variables' as *;
+@use 'mixin' as *;
+
+.job-category {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        right: -10%;
+        width: 900px;
+        height: 900px;
+        z-index: -1;
+        background-image: url(/img/job_category.webp);
+        background-size: cover;
+        background-position: right center;
+        border-radius: 50%;
+        box-shadow:
+            0 0 1px 1px rgba($color-accent, 0.5), // 1番内側：ほとんど見えないくらい淡く
+            0 0 30px 30px rgba($color-accent, 0.2), // 中間：ほんのり色がのる程度
+            0 0 60px 60px rgba($color-accent, 0.1); // 1番外側：ぼかしを大きくして、淡く広がるように
+    }
+
+    .section-title {
+        text-align: center;
+
+        h2,
+        h3 {
+            color: $color-main;
+        }
+    }
+
+    .job-list {
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+
+            @include tab {
+                grid-template-columns: 1fr;
+            }
+
+
+            li {
+                background-color: rgba($color-main, 0.7);
+                padding-inline: 5%;
+                border-radius: 5px;
+
+                .section-title {
+
+                    h2,
+                    h3 {
+                        color: $color-white;
+                    }
+                }
+
+                p {
+                    margin-bottom: 25px;
+                }
+
+                .btn-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .btn-view-more {
+                        margin-bottom: 10px;
+                        display: flex;
+                        align-items: center;
+                        width: fit-content;
+                        text-decoration: none;
+
+                        &:last-of-type {
+                            margin-bottom: 35px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .recruitment {
+        padding-inline: 10%;
+        border: 1px solid $color-main;
+        border-radius: 5px;
+        margin-block: 50px;
+        background-color: rgba($color-white, 0.7);
+
+        .inner {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding-bottom: 25px;
+            align-items: center;
+
+            @include tab {
+                grid-template-columns: 1fr;
+
+                .btn-view-more {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 auto;
+                }
+            }
+
+            p {
+                color: $color-main;
+            }
+
+        }
+    }
+
+
+}

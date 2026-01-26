@@ -2,5 +2,89 @@
 @use 'mixin' as *;
 
 .about-us {
+    background-color: $color-blue ;
+    background-image: url("/img/backgroundimg.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -5;
+    padding-bottom: 100px;
 
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        margin-bottom: -1px;
+        height: 100px;
+        width: 100%;
+        background-color: $color-white;
+        clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    .main-text {
+        padding: 5%;
+        border-top: 1px solid $color-white ;
+        border-bottom: 1px solid $color-white ;
+        margin-bottom: 10%;
+    }
+
+    .container {
+        ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding-inline: 10%;
+
+            @include tab {
+                grid-template-columns: 1fr;
+            }
+
+            li {
+                border-radius: 5px;
+
+                &:nth-child(3) {
+                    order: 2;
+
+                    @include tab {
+                        order: 1;
+                    }
+                }
+
+                &:nth-child(4) {
+                    order: 1;
+
+                    @include tab {
+                        order: 2;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    min-height: 300px;
+                    object-fit: cover;
+                    object-position: center;
+                }
+
+                .inner {
+                    border: 1px solid $color-white;
+                    padding-inline: 20px;
+                    background-color: rgba($color-white, 0.1);
+
+                    p {
+                        margin-block: 50px;
+                    }
+
+                    .btn-view-more {
+                        margin-bottom: 25px;
+                    }
+                }
+            }
+        }
+    }
 }
