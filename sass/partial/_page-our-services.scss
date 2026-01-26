@@ -1,0 +1,52 @@
+@use 'variables' as *;
+@use 'mixin' as *;
+
+
+.our-services {
+    ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding-block: 5%;
+        width: 80%;
+        margin: 0 auto;
+
+        @include sp {
+            grid-template-columns: 1fr;
+
+        }
+
+        li {
+            border: 1px solid $color-blue;
+            background-image: linear-gradient($color-sky-blue, $color-white);
+            border-radius: 0 30px 0 30px;
+            display: flex;
+            flex-direction: column;
+            // min-height: 350px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding-block: 20px;
+
+
+            h2 {
+                font-size: 2.4rem;
+                margin-block: 5%;
+                margin-inline: 8%;
+            }
+
+            p {
+                font-size: 1.4rem;
+                margin-inline: 8%;
+                flex-grow: 1;
+                padding-bottom: 50px;
+            }
+
+            .btn-view-more {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 50px 0 auto;
+                min-width: 240px;
+            }
+        }
+    }
+}
