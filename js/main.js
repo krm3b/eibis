@@ -1,17 +1,17 @@
+
+
 $(function () {
   /*=================================================
-      ハンバーガ―メニュー
+  ハンバーガ―メニュー
   ===================================================*/
-    // ハンバーガーメニューをクリックした時
-    $(".toggle-btn").on("click", function () {
-      $("header").toggleClass("open");
+  // ハンバーガーメニューをクリックした時
+  $(".toggle-btn").on("click", function () {
+    $("header").toggleClass("open");
   });
 
   // メニューのリンクをクリックした時、ナビ非表示
   $("nav").on("click", function () {
-      $("header").removeClass("open");
+    $("header").removeClass("open");
   });
-
-  
 });
 

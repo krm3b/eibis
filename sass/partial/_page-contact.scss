@@ -1,6 +1,70 @@
 @use 'variables' as *;
 @use 'mixin' as *;
-
 .page-contact {
+    .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: "Noto Sans JP", sans-serif;
 
+        dl {
+            margin-bottom: 24px;
+
+            dt {
+                font-size: 1.4rem;
+                margin-bottom: 8px;
+                color: $color-text;
+
+                .required {
+                    display: block; // 画像のように改行させる場合
+                    color: $color-accent;
+                    font-size: 1.2rem;
+                    margin-top: 4px;
+                }
+            }
+
+            dd {
+                margin-left: 0; 
+
+                input[type="text"],
+                input[type="email"],
+                input[type="tel"],
+                textarea {
+                    width: 100%;
+                    padding: 12px;
+                    border: 1px solid $color-main;
+                    background-color: rgba($color-sky-blue, 0.3);
+                    border-radius: 4px;
+                    font-size: 1.6rem;
+                    box-sizing: border-box; 
+                    outline: none;
+
+                    &:focus {
+                        background-color: rgba($color-sky-blue, 0.3);
+                        border-color: darken($color-main, 10%);
+                    }
+                }
+
+                textarea {
+                    height: 200px; 
+                    resize: vertical; 
+                }
+            }
+        }
+    }
+
+    .policy-text {
+        text-align: center;
+        font-size: 2rem;
+        color: $color-text;
+        margin-top: 40px;
+    }
+
+    .btn-view-more {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center; 
+        margin-top: 10%;
+        
+    }
 }

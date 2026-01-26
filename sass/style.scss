@@ -8,14 +8,21 @@
 @use 'partial/_footer.scss';
 
 // メインページ
+
 @use 'partial/_mainvisual.scss';
 @use 'partial/_about-us.scss';
-@use 'partial/_our-services.scss';
-@use 'partial/_engineer.scss';
-@use 'partial/_part-time.scss';
-@use 'partial/_recruit.scss';
+@use 'partial/_job-category.scss';
+@use 'partial/_news.scss';
 @use 'partial/_contact.scss';
 
 // 下層ページ
 @use 'partial/_page-contact.scss';
+@use 'partial/_page.scss';
+@use 'partial/_page-about.scss';
+@use 'partial/_page-our-services.scss';
+@use 'partial/_page-news.scss';
+@use 'partial/_page-news-list.scss';
+
 // メモ　確認後消します　→ 下層のファイル作成時は　page-◯◯.scss とすること
+
+

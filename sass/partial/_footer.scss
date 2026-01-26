@@ -2,5 +2,107 @@
 @use 'mixin' as *;
 
 footer {
+    background-color: $color-blue ;
+    background-image: url("/img/backgroundimg.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    // color: $color-white; 全てテキストを白にする場合はコメントアウトを消す
 
+    .wrapper {
+
+        .inner {
+            display: flex;
+            justify-content: space-between;
+            padding-block: 3%;
+
+            @include sp {
+                flex-direction: column;
+            }
+
+            .left {
+                .left-footer {
+                    @include flex(flex-start, 10px);
+                    align-items: flex-end;
+
+                    .logo {
+                        line-height: 1;
+
+                        img {
+                            height: 50px;
+                            width: auto;
+                            display: block;
+                        }
+                    }
+
+                    p {
+                        font-size: 2.2rem;
+                        font-weight: normal;
+                        line-height: 1.1;
+                        margin: 0;
+
+                        span {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+
+                .address,
+                .tel {
+                    margin-block: 5%;
+
+                    p {
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+
+            .right {
+                ul {
+                    li {
+                        margin-block: 20px;
+
+                        @include sp {
+                            flex-direction: column-reverse;
+                            // margin-block: 0%;
+                        }
+
+                        a {
+
+                            font-size: 2.2rem;
+                            font-weight: normal;
+                            line-height: 1.1;
+                            margin: 0;
+                            font-size: 1.6rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .link {
+            ul {
+                display: flex;
+                justify-content: center;
+
+                li {
+                    width: 15%;
+                    margin: 10px;
+                }
+            }
+        }
+    }
+
+    .copy {
+        background-color: $color-main;
+        color: $color-white;
+        margin: 0 auto;
+
+        p {
+            padding-top: 5px;
+            text-align: center;
+            font-size: 1.4rem;
+        }
+    }
 }

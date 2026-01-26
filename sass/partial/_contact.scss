@@ -2,5 +2,53 @@
 @use 'mixin' as *;
 
 .contact {
+    position: relative;
+    z-index: 1;
+    background-color: $color-main;
 
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin-top: -1px;
+        height: 50px;
+        width: 100%;
+        background-color: $color-blue;
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(/img/contact.webp);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.2;
+        z-index: -1;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .section-title,
+        .section-text {
+            width: 100%;
+            text-align: left;
+        }
+
+        .btn-view-more {
+            background-color: $color-accent ;
+        }
+
+    }
 }

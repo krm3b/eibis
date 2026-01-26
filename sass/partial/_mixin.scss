@@ -9,6 +9,11 @@
 //     }
 // }
 
+
+// 以下で設定
+// $tab: 768px;
+// $sp: 425px;
+
 @mixin tab {
     @media (max-width: ($tab)) {
         @content;
@@ -31,3 +36,11 @@
     gap: $gap;
 
 }
+
+
+@mixin title {
+    background: linear-gradient(90deg, $color-main 50%, $color-white);
+    border-radius: 5px;
+    width: 100%;
+}
+
