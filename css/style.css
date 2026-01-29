@@ -378,7 +378,7 @@ header .right-header nav {
   opacity: 0;
   visibility: hidden;
   transition: 0.3s ease;
-  padding-inline: 10%;
+  padding-inline: 5%;
   z-index: 0;
 }
 @media (max-width: 768px) {
@@ -414,8 +414,8 @@ header .right-header nav .index {
 }
 header .right-header nav .flex {
   display: flex;
-  justify-content: space-between;
-  gap: 0px;
+  justify-content: center;
+  gap: 2%;
 }
 @media (max-width: 768px) {
   header .right-header nav .flex {
@@ -487,13 +487,6 @@ header .right-header nav .flex .banner img:hover {
 }
 header.open .toggle-btn span:nth-child(1), header.open .toggle-btn span:nth-child(3) {
   opacity: 0;
-}
-header.open .toggle-btn:nth-child(2) {
-  opacity: 0;
-}
-header.open .toggle-btn:nth-child(3) {
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(315deg);
 }
 header.open nav {
   transform: translateX(0);
