@@ -154,7 +154,7 @@ header {
       opacity: 0;
       visibility: hidden;
       transition: .3s ease;
-      padding-inline: 10%;
+      padding-inline: 5%;
       z-index: 0;
 
       @include tab {
@@ -189,7 +189,7 @@ header {
       }
 
       .flex {
-        @include flex;
+        @include flex(center, 2%);
 
         @include tab {
           flex-direction: column;
@@ -275,15 +275,6 @@ header {
             &:nth-child(3) {
               opacity: 0;
             }
-        }
-
-        &:nth-child(2) {
-          opacity: 0;
-        }
-
-        &:nth-child(3) {
-          top: 50%;
-          transform: translate(-50%, -50%) rotate(315deg);
         }
     }
 
