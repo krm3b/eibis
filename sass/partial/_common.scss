@@ -13,6 +13,11 @@ body {
     padding: 0;
 }
 
+.margin {
+    padding-top: 80px;
+}
+
+
 iframe {
     width: 100vw;
     height: 100vh;
@@ -27,8 +32,6 @@ iframe {
     margin: 0 auto;
     padding-inline: 2%;
 }
-
-
 
 .sec-pd {
     padding-block: 100px;
@@ -211,5 +214,29 @@ iframe {
     img {
         width: 40%;
         opacity: 0.2;
+    }
+}
+
+/* 最初は透明にしておく（Triggerクラス） */
+.fadeUpTrigger {
+    opacity: 0;
+}
+
+/* JSでこのクラスが付与されたらアニメーション開始 */
+.fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
