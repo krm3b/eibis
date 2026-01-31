@@ -1,9 +1,14 @@
+@charset "UTF-8";
 body {
   font-family: "Noto Serif JP", serif;
   background-color: #FFFFFF;
   color: #333333;
   margin: 0;
   padding: 0;
+}
+
+.margin {
+  padding-top: 80px;
 }
 
 iframe {
@@ -192,6 +197,28 @@ iframe {
   opacity: 0.2;
 }
 
+/* 最初は透明にしておく（Triggerクラス） */
+.fadeUpTrigger {
+  opacity: 0;
+}
+
+/* JSでこのクラスが付与されたらアニメーション開始 */
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -235,6 +262,7 @@ header {
   width: 100%;
   z-index: 100;
   background: transparent;
+  transition: transform 0.3s; /* 滑らかに動かす */
 }
 @media (max-width: 768px) {
   header {
@@ -493,6 +521,9 @@ header.open nav {
   opacity: 1;
   visibility: visible;
 }
+header.hide {
+  transform: translateY(-100%);
+}
 
 footer {
   background-color: #2795D9;
@@ -584,7 +615,6 @@ footer .copy p {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  z-index: -5;
   padding-bottom: 100px;
 }
 .about-us::before {
@@ -652,6 +682,11 @@ footer .copy p {
   margin-block: 50px;
 }
 .about-us .container ul li .inner .btn-view-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  min-width: 240px;
   margin-bottom: 25px;
 }
 
@@ -1125,7 +1160,7 @@ footer .copy p {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 50px 0 auto;
+  margin: 0 auto;
   min-width: 240px;
 }
 
