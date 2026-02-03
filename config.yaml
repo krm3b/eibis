@@ -2,3 +2,6 @@ name: 株式会社エイビス
 description: 株式会社エイビス 公式サイト
 version: 1.0.0
 author: NOE
+
+blog: site
+root: true

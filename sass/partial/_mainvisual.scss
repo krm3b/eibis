@@ -2,5 +2,11 @@
 @use 'mixin' as *;
 
 .mainvisual {
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+}
 
+#three-container{
+    height: 100%;
 }
