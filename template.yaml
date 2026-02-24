@@ -1,0 +1,11 @@
+top:
+  label: トップページ
+  file: index.html
+
+about:
+  label: 会社概要
+  file: about.html
+
+entry:
+  label: エントリー
+  file: entry.html
